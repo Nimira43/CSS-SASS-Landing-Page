@@ -3,8 +3,63 @@
 * {
     margin: 0;
     padding: 0;
+    list-style: none;
+    text-decoration: none;
+}
+
+:root {
+    --light: #eee;
+    --dark: #222;
+    --grey: #aaa;
+
+    --trans: all 0.5s ease;
+    --b-radius: 3px;
+    --box-shad: 0 5px 15px rgba(3, 3, 3, 0.5);
 }
 
 body {
     font-family: 'Red Hat Display', sans-serif;
+}
+
+.menu {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 1;
+}
+
+.menu-nav {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+}
+
+.menu-nav li {
+    font-size: 2rem;
+    padding: 1rem 2rem;
+}
+
+.menu-nav-left,
+.menu-nav-right {
+    transition: var(--trans);
+    font-weight: 300;    
+}
+
+.menu-nav-left {
+    color: var(--light);
+}
+
+.menu-nav-right {
+    color: var(--dark);
+}
+
+.menu-nav-left:hover,
+.menu-nav-right:hover {
+    cursor: pointer;
+    box-shadow: var(--box-shad);
+    transition: var(--trans);
+    border: 1px dotted var(--dark);
+    padding: 0.3rem;
+    border-radius: var(--b-radius);
 }
